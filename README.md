@@ -2,6 +2,16 @@
 
 A lightweight web application for organizing a job search. Track applications, update their progress, search by company or role, and view a quick status dashboard.
 
+## Screenshots
+
+### Dashboard
+
+![Application dashboard](screenshots/dashboard.png)
+
+### Add application
+
+![Add application form](screenshots/add-application.png)
+
 ## Features
 
 - Add, edit, and delete job applications

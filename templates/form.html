@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} | Job Application Tracker{% endblock %}
+{% block content %}
+  <section class="form-card">
+    <div class="form-heading">
+      <p class="eyebrow">APPLICATION DETAILS</p>
+      <h1>{{ title }}</h1>
+    </div>
+    <form method="post" class="application-form">
+      <div class="form-grid">
+        <label>Company *
+          <input name="company" maxlength="100" required value="{{ application.company if application else '' }}">
+        </label>
+        <label>Position *
+          <input name="position" maxlength="120" required value="{{ application.position if application else '' }}">
+        </label>
+        <label>Status *
+          <select name="status" required>
+            {% for status in statuses %}
+              <option value="{{ status }}" {% if application and application.status == status %}selected{% endif %}>{{ status }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>Application date *
+          <input type="date" name="application_date" required value="{{ application.application_date if application else today }}">
+        </label>
+        <label>Location
+          <input name="location" maxlength="100" placeholder="Remote or City, State" value="{{ application.location if application else '' }}">
+        </label>
+        <label>Job URL
+          <input type="url" name="job_url" placeholder="https://..." value="{{ application.job_url if application else '' }}">
+        </label>
+      </div>
+      <label>Notes
+        <textarea name="notes" rows="5" maxlength="1000" placeholder="Recruiter, interview notes, next steps...">{{ application.notes if application else '' }}</textarea>
+      </label>
+      <div class="form-actions">
+        <button class="button button-primary" type="submit">Save application</button>
+        <a class="button" href="{{ url_for('index') }}">Cancel</a>
+      </div>
+    </form>
+  </section>
+{% endblock %}

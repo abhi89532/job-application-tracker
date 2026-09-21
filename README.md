@@ -27,7 +27,7 @@ A lightweight web application for organizing a job search. Track applications, u
 1. Clone the repository and enter the project directory:
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/job-application-tracker.git
+   git clone https://github.com/abhi89532/job-application-tracker.git
    cd job-application-tracker
    ```
 
